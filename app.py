@@ -26,6 +26,7 @@ def makeGetRequest(token, url, params={}):
 def getUserInformation(session):
 	url = 'https://api.spotify.com/v1/me'
 	payload = makeGetRequest(session['token'], url)
+	print("USER INFORMATION: ", payload)
 
 	if payload == None:
 		return None
