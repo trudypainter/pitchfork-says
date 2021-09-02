@@ -1,0 +1,249 @@
+@font-face {
+    font-family: title;
+    src: url(fonts/TiemposHeadline-Bold.otf);
+}
+@font-face {
+    font-family: titleItalic;
+    src: url(fonts/TiemposHeadline-RegularItalic.otf);
+}
+@font-face {
+    font-family: body;
+    src: url(fonts/Walfork-Regular.ttf);
+}
+
+body{
+    margin: 0;
+    background-color: rgb(243, 243, 243);
+}
+a{
+    text-decoration: none;
+}
+
+.top-nav {
+    background-color: rgb(37, 37, 37);
+    color: white;
+    padding-top: 25px;
+    height: 80px;
+    font-size: 30px;
+    font-family: title;
+    text-align: center;
+}
+/*
+AUTHORIZE PAGE
+*/
+.authorize{
+    font-family: title;
+    font-size: 24px;
+    margin:auto;
+    color:rgb(241, 75, 75)
+}
+.home-div{
+    padding-top: 60px;
+    width: 100%;
+    text-align: center;
+}
+.intro{
+    padding: 20px;
+    margin: auto;
+    font-size: 18px;
+    width: 400px;
+    font-family: body;
+}
+
+/*
+HEADER
+*/
+
+* {
+    box-sizing: border-box;
+  }
+
+  .header-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    background-color: white;
+  }
+  
+  .flex-item-left {
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  .flex-item-right {
+    padding: 10px;
+    flex: 50%;
+    display: inline-block;
+  }
+
+  .wrapper{
+      display: inline-block;
+      margin: auto 0;
+  }
+  
+  /* Responsive layout - makes a one column-layout instead of a two-column layout */
+  @media (max-width: 850px) {
+    .flex-item-right, .flex-item-left {
+      flex: 100%;
+    }
+    .flex-item-right{
+        align-items: center;
+    }
+  }
+
+.header-box{
+    background-color: white;
+  width: 80%;
+  margin: auto;
+
+  place-items: center;
+}
+
+.duration-box{
+  width: 80%;
+  margin: auto;
+  font-family: body;
+  font-size: 20px;
+  padding:20px;
+  text-align: center;
+}
+.duration-box a{
+    padding: 30px;
+    margin: 30px;
+    color: black;
+}
+
+img {
+    float: left;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 200px;
+}
+
+.name {
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+    margin:auto;
+    font-family: body;
+    font-size: 24px;
+}
+.review-type {
+    padding-top: 10px;
+    width: 100%;
+    text-align: center;
+    margin:auto;
+    font-family: titleItalic;
+    font-size: 24px;
+}
+
+.header-box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column{
+    float: left;
+    width: 48%;
+    padding: 10px;
+}
+.item {
+  background: yellow;
+  text-align: center;
+  border: 1px solid red;
+  width: 100px;
+  float: left;
+}
+
+/* DURATION PAGE AND LOADING */
+.duration-header {
+    font-family: title;
+    font-size: 30px;
+    line-height: 40px;
+    padding: 30px;
+}
+
+.loader-box {
+    width: 80%;
+  margin: auto;
+  font-family: body;
+  font-size: 20px;
+  padding:20px;
+  text-align: center;
+  display:none;
+}
+
+.loader {
+    margin: auto;
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid darkgray; 
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+/*
+REVIEW PAGE
+*/
+.track-table {
+    font-family: body;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+.track-table td, .track-table th {
+    border: none;
+    padding: 8px;
+  }
+  .track-table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .track-table tr:hover {background-color: #ddd;}
+
+  .circle {
+      float:left;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: red;
+    font-size: 50px;
+    color: red;
+    text-align: center;
+    background: none;
+    font-family: body;
+
+    margin-left: 40px;
+    margin-top: 100px;
+  }
+
+  .circle-empty {
+    float:left;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: white;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  background: none;
+  font-family: body;
+
+  margin-left: 40px;
+  margin-top: 100px;
+}
+
+

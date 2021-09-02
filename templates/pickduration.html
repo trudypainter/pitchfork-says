@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script>
+function disapper() { 
+    console.log("disappear")
+	document.getElementById("one").style.display="none"; 
+	document.getElementById("two").style.display="block"; 
+}
+</script>
+
+<div class="header-container">
+    <div class="flex-item-left">
+        <div class="name">
+            {{ current_username }}
+        </div>
+        <div class="review-type">
+            {{ prettyduration }}
+        </div>
+    </div>
+
+    <div class="flex-item-right">
+        <div class="wrapper">
+            <img src="{{ current_userpicture }}">
+            <div class="circle-empty">
+                {{ avg_rating }}
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div id="one" class="duration-box">
+    <div class="duration-header">
+        Top Songs
+    </div>
+    <a onclick="disapper()" 
+    href="/review?duration=short_term&token={{ session['token'] }}&username={{current_username}}&userpicture={{current_userpicture}}">
+    Past 2 Weeks</a><br><br>
+    <a onclick="disapper()" href="/review?duration=medium_term&token={{ session['token'] }}&username={{current_username}}&userpicture={{current_userpicture}}">Past 6 Months</a><br><br>
+    <a onclick="disapper()" href="/review?duration=long_term&token={{ session['token'] }}&username={{current_username}}&userpicture={{current_userpicture}}">All Time</a><br><br>
+
+    <div class="duration-header">
+        Enter Playlist URL
+    </div>
+    <form method="POST" action="/review?token={{ session['token'] }}">
+        <input name="playlist_url">
+        <input onclick="disapper()" type="submit">
+    </form>
+
+    <div class="duration-header">
+        Playlists
+    </div>
+    <table style="width:fit-content; margin: auto; text-align: left;" class="track-table">
+        {% for playlist in playlist_info %}
+        </tr>
+            <td><img style="width: 45px; padding: 0px;" src="{{ playlist['images'][0]['url'] }}"></td>
+            <td><a onclick="disapper()" 
+                href="/review?playlist={{ playlist['id'] }}&token={{ session['token'] }}&username={{current_username}}&userpicture={{playlist['images'][0]['url']}}">
+                {{ playlist['name'] }}</a><br>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+   
+
+</div>
+
+</div>
+
+<div id ="two" class="loader-box">
+    <div class="loader"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header-container">
+    <div class="flex-item-left">
+        <div class="name">
+            {{ current_username }}
+        </div>
+        <div class="review-type">
+            {{ prettyduration }}
+        </div>
+    </div>
+
+    <div class="flex-item-right">
+        <div class="wrapper">
+            <img src="{{ current_userpicture }}">
+            <div class="circle">
+                {{ avg_rating }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="header-box">
+    <table class="track-table">
+        <tr>
+  {% for track in track_objs %}
+</tr>
+    <td>{{track[0]}}</td>
+    <td>{{track[1]}}</td>
+    <td>{{track[2]}}</td>
+    <td>{{track[3]}}</td>
+</tr>
+  {% endfor %}
+</table>
+</div>
+<br>
+<br>
+
+{% endblock %}
