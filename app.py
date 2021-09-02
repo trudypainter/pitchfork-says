@@ -16,6 +16,7 @@ def getPrettyDuration(duration):
 
 def makeGetRequest(token, url, params={}):
 	headers = {"Authorization": "Bearer {}".format(token)}
+	print(headers)
 	response = requests.get(url, headers=headers, params=params)
 
 	if response.status_code == 200:
@@ -24,6 +25,7 @@ def makeGetRequest(token, url, params={}):
 	return None
 
 def getUserInformation(session):
+	print("TOKEN FOR USER INFO: ", session['token'])
 	url = 'https://api.spotify.com/v1/me'
 	payload = makeGetRequest(session['token'], url)
 	print("USER INFORMATION: ", payload)
@@ -116,6 +118,7 @@ def getTrackAvgForDuration(token, time):
 	return track_objs, album_score_dict
 
 def getToken(code):
+	print("STARTING GET TOKEN CALL")
 	token_url = 'https://accounts.spotify.com/api/token'
 	authorization = os.environ['AUTHORIZATION']
 	redirect_uri = os.environ['REDIRECT_URI']
