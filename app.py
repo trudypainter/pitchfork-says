@@ -116,8 +116,8 @@ def getTrackAvgForDuration(token, time):
 
 def getToken(code):
 	token_url = 'https://accounts.spotify.com/api/token'
-	authorization = app.config['AUTHORIZATION']
-	redirect_uri = app.config['REDIRECT_URI']
+	authorization = os.environ['AUTHORIZATION']
+	redirect_uri = os.environ['REDIRECT_URI']
 
 	headers = {'Authorization': authorization, 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded'}
 	body = {'code': code, 'redirect_uri': redirect_uri, 'grant_type': 'authorization_code'}
@@ -138,10 +138,10 @@ def home():
 
 @app.route('/authorize')
 def authorize():
-	client_id = app.config['CLIENT_ID']
-	client_secret = app.config['CLIENT_SECRET']
-	redirect_uri = app.config['REDIRECT_URI']
-	scope = app.config['SCOPE']
+	client_id = os.environ['CLIENT_ID']
+	client_secret = os.environ['CLIENT_SECRET']
+	redirect_uri = os.environ['REDIRECT_URI']
+	scope = os.environ['SCOPE']
 
 	# redirect user to Spotify authorization page
 	authorize_url = 'https://accounts.spotify.com/en/authorize?'
